@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Project 2 Report: NYPD Force Allegations</title>
+        <style>
+            :root {
+                --color-neutral-95: hsl(220 10% 95%);
+                --color-neutral-90: hsl(220 10% 90%);
+                --color-neutral-80: hsl(220 10% 80%);
+                --color-neutral-70: hsl(220 10% 70%);
+                --color-neutral-60: hsl(220 10% 60%);
+                --color-neutral-50: hsl(220 10% 50%);
+                --color-neutral-40: hsl(220 10% 40%);
+                --color-neutral-30: hsl(220 10% 30%);
+                --color-neutral-20: hsl(220 10% 20%);
+                --color-neutral-10: hsl(220 10% 10%);
+            }
+
+            html {
+                font: 100%/1.5 system-ui;
+                counter-reset: figure;
+                background: var(--color-neutral-95);
+                max-width: min(75vw, 80em);
+                margin: 0 auto;
+            }
+
+            h1, h2, h3, h4 {
+                line-height: 1.1;
+                font-weight: 600;
+                text-wrap: balance;
+            }
+
+            h1, h2 {
+                border-bottom: 1px solid var(--color-neutral-80);
+                padding-bottom: 0.2em;
+            }
+
+            h1 {
+                margin-block: 1em 0.5rem;
+                font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+                font-weight: 800;
+
+                small {
+                    display: block;
+                    width: fit-content;
+                    padding: 0.2em 0.5em;
+                    margin-inline: auto;
+                    color: white;
+                    background: var(--color-neutral-40);
+                    font-size: 40%;
+                    text-transform: uppercase;
+                    white-space: nowrap;
+                }
+            }
+
+            h2 {
+                font-size: 180%;
+                color: var(--color-neutral-30);
+                margin-top: 2rem;
+            }
+
+            h3 {
+                font-size: 130%;
+                color: var(--color-neutral-40);
+            }
+
+            ul {
+                padding-inline-start: 2em;
+            }
+
+            li {
+                margin-bottom: 1.5rem;
+            }
+
+            header {
+                padding-block: 1em;
+                text-align: center;
+            }
+
+            main {
+                background: white;
+                color: var(--color-neutral-20);
+                border-radius: 1rem;
+                padding: 0.1rem 2rem 2rem 2rem;
+            }
+
+            figure {
+                margin: 2em 0;
+                padding: 0.5rem;
+                border: 1px solid var(--color-neutral-80);
+                text-align: center;
+                background: #0b0e14; /* Defaulting to match the darker vis style if needed */
+            }
+
+            figure.light-bg {
+                background: #f8f9fa;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            figcaption {
+                font: 500 85% system-ui;
+                background: var(--color-neutral-95);
+                padding: 0.75rem;
+                margin-top: 0.5rem;
+                counter-increment: figure;
+                text-align: left;
+            }
+
+            figcaption::before {
+                content: "Figure " counter(figure) ": ";
+                font-weight: bold;
+                color: var(--color-neutral-40);
+            }
+
+            .score-tag {
+                display: inline-block;
+                padding: 0.1em 0.4em;
+                border-radius: 4px;
+                background: var(--color-neutral-90);
+                font-weight: bold;
+                font-size: 0.9em;
+                margin-right: 0.5em;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h1>
+                <small>Project 2</small>
+                Persuasive or Deceptive Visualization?
+            </h1>
+            <p><strong>Harshatha Prasanna, Jazely Tong, Aryan Nath</strong></p>
+        </header>
+
+        <main>
+            <h2>Proposition: Force complaints against NYPD officers are rarely substantiated, suggesting the system protects officers who use physical force.</h2>
+
+            <section>
+                <h3>FOR the Proposition</h3>
+
+                <figure>
+                    <img src="s1.png" alt="Bar chart showing Force has the lowest substantiation rate among NYPD complaint categories." />
+                    <figcaption>Comparison of substantiation rates across major complaint categories, highlighting the extreme rarity of confirmed misconduct in use-of-force cases.</figcaption>
+                </figure>
+
+                <p><strong>Design Decisions and Rationale:</strong></p>
+
+                <ul>
+                    <li>
+                        <span class="score-tag">Score: -1.0</span>
+                        <strong>Categorical Isolation via Color Encoding:</strong>
+                        The Force category is rendered in a vivid, high-alert red while all other complaint types are collapsed into a uniform shade of muted blue. This creates a binary visual narrative where Force is the immediate outlier of the dataset. By using color to imply danger and abnormality, the visualization nudges the reader to view the 12.8 percent substantiation rate as a systemic failure rather than a standard statistical variation.
+                    </li>
+                    <li>
+                        <span class="score-tag">Score: -0.5</span>
+                        <strong>Impact-Oriented Sorting Order:</strong>
+                        The y-axis is sorted by descending substantiation rates, placing Force at the very bottom of the chart. This ensures the reader first encounters higher rates of accountability for minor offenses like Discourtesy or Abuse of Authority. When the eye finally reaches the Force bar, the sharp drop-off in percentage feels more dramatic and conclusive, effectively making it the punchline of the graphic.
+                    </li>
+                    <li>
+                        <span class="score-tag">Score: 1.5</span>
+                        <strong>Frequency-Based Annotation:</strong>
+                        The text callout stating that fewer than 1 in 8 force allegations are ever confirmed as misconduct translates the abstract percentage into a tangible human frequency. While mathematically identical to the raw data, this translation makes the scarcity of substantiation more visceral and easier for the brain to process than a decimal value. It effectively bridges the gap between data and lived experience.
+                    </li>
+                    <li>
+                        <span class="score-tag">Score: 0.0</span>
+                        <strong>High-Contrast Aesthetic Framing:</strong>
+                        Utilizing a dark theme with bright labels creates a sense of professional urgency and gravity. This stylistic choice emphasizes the clarity of the bars and ensures the red focal point is impossible to ignore. While the colors are striking, they do not distort the underlying geometry of the data, maintaining a level of structural integrity despite the persuasive intent.
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h3>AGAINST the Proposition</h3>
+
+                <figure class="light-bg">
+                    <img src="a2.png" alt="Bar chart breaking down force allegation outcomes into Unsubstantiated, Exonerated, and Substantiated." />
+                    <figcaption>Detailed breakdown of investigation outcomes for force allegations, emphasizing that most cases result in a specific finding of adherence to guidelines rather than a simple dismissal.</figcaption>
+                </figure>
+
+                <p><strong>Design Decisions and Rationale:</strong></p>
+
+                <ul>
+                    <li>
+                        <span class="score-tag">Score: -1.5</span>
+                        <strong>Embedded Interpretive Definitions:</strong>
+                        Explanatory text is placed directly inside the bars to pre-define the meaning of bureaucratic terms like Exonerated and Unsubstantiated. This is a deceptive attempt to narrow the reader's interpretation, specifically by defining Exonerated as the officer acting within department guidelines. This forces the reader to accept the board's judgment as a factual reality before they have a chance to question the criteria for such a finding.
+                    </li>
+                    <li>
+                        <span class="score-tag">Score: 1.0</span>
+                        <strong>Granular Outcome Segmentation:</strong>
+                        Instead of a binary view of substantiated versus unsubstantiated cases, this chart splits the non-punitive results into distinct findings. Showing that nearly 46 percent of cases were officially exonerated suggests a functional and rigorous review process. This transformation shifts the focus from a lack of punishment to the presence of active oversight, countering the narrative of systemic protection.
+                    </li>
+                    <li>
+                        <span class="score-tag">Score: -1.0</span>
+                        <strong>Thematic Counter-Narrative Titling:</strong>
+                        The title explicitly claims that the board does not simply dismiss every complaint, functioning as a direct rebuttal to common criticisms. It uses the chart as evidence for a thesis of diligence. By framing the data as a proof of competence, the visualization steers the reader away from skepticism and toward an acceptance of the NYPD review process as a legitimate system of checks and balances.
+                    </li>
+                    <li>
+                        <span class="score-tag">Score: 0.5</span>
+                        <strong>Institutional Color Palette:</strong>
+                        The use of a clean white background combined with teal and navy tones mimics the aesthetic of an official government audit or an academic white paper. This increases the perceived authority and neutrality of the visualization. This choice leverages the reader's trust in institutional design to make the defensive narrative feel like an objective and dispassionate report.
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Final Reflection</h2>
+                <p>Constructing two diametrically opposed narratives from a single repository of civilian complaints highlighted the inherent flexibility of quantitative evidence. The most striking realization was how a statistic like a 12.8 percent substantiation rate can be transformed from a symbol of systemic failure into a mere fraction of a larger, more complex administrative workflow. One visualization relied on isolation and high-contrast warnings to provoke urgency. The other used institutional colors and granular categories to project a sense of order and fairness. This exercise proved that the architecture of a chart is just as influential as the numbers it contains.</p>
+
+                <p>Ethical visualization is defined by the degree of transparency provided to the observer. It is the responsibility of the designer to ensure that the visual shorthand used to simplify data does not also serve to obfuscate the truth. A persuasive choice remains acceptable when it emphasizes a real trend without resorting to the suppression of conflicting details or the manipulation of basic geometric conventions. Deception begins when the visual encoding is designed to prevent the reader from reaching any conclusion other than the one intended by the author. A designer must strive to lead the reader to a conclusion while still leaving the door open for independent verification.</p>
+            </section>
+        </main>
+    </body>
+</html>
